@@ -16,10 +16,6 @@ export default function App() {
 
   useEffect(() => {
     api.get('repositories').then(response => {
-      response.data.map(repository => {
-        const tech = repository.techs.split(','); // Converte para array
-        repository.techs = tech;
-      });
       setRepositories(response.data);
     });
   }, []);
